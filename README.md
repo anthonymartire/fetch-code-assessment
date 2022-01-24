@@ -24,5 +24,7 @@ These are the resulotions I have attempted so far:
 -Confirmed that the variable holding the form data is populated right before the POST request is sent.
 ![post-object-data](https://user-images.githubusercontent.com/86023455/150874813-332c1999-0211-4bd2-8903-26e281560bab.jpg)
 
+While this was of relatively low importance, I also tried stringifying my response to check if that resolved the error, and I also attempted to use query params within Postman. Both with no success.
+
 # Contact The Author Of This Project
 e-mail: A.J.Martire@gmail.com
