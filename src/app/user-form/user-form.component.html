@@ -1,0 +1,35 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="user-form">
+  <div class="title-elements">
+    <img src="https://www.fetchrewards.com/assets/images/logos/header-logo.png" class="w3-round" alt="Norway">
+    <h1>Sign-In To Fetch Rewards</h1>
+  </div>
+  <div class="control-elements" *ngIf="viewModel$|async as data">
+    <div class="field-container">
+      <label for="name" class="label">Name: </label>
+      <input type="text" class="form-control" id="name" formControlName="name" placeholder="Enter your name here...">
+    </div>
+    <div class="field-container">
+      <label for="email" class="label">E-mail: </label>
+      <input type="text" class="form-control" id="email" formControlName="email"
+        placeholder="Enter your e-mail here...">
+    </div>
+    <div class="field-container">
+      <label for="password" class="label">Password: </label>
+      <input type="password" class="form-control" id="password" formControlName="password"
+        placeholder="Enter your password here...">
+    </div>
+    <div class="field-container">
+      <label for="occupation" class="label">Occupation:</label>
+      <select class="form-select" id="occupation" formControlName="occupation">
+        <option *ngFor="let occ of data.occupations" [ngValue]="occ">{{occ}}</option>
+      </select>
+    </div>
+    <div class="field-container">
+      <label for="state" class="label">State:</label>
+      <select class="form-select" id="state" formControlName="state">
+        <option *ngFor="let state of data.states" [ngValue]="state.name">{{state.abbreviation}}</option>
+      </select>
+    </div>
+  </div>
+  <button class="submit-button" type="submit">Create User</button>
+</form>
